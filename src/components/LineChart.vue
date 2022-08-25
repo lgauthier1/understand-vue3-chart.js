@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, watch } from "vue";
-import Chart from "chart.js/auto";
-const props = defineProps<{ id: string; data: Object; options: Object }>();
-let lineChart;
+import Chart, { ChartItem } from "chart.js/auto";
+const props = defineProps<{ id: string; data: { data: Object }; options: Object }>();
+let lineChart
 let chartData;
 const emit = defineEmits(["LineChartClick"]);
 
@@ -45,7 +45,7 @@ const defaultOptions = {
 
 onMounted(() => {
   chartData = { ...props.data, options: { ...defaultOptions, ...props.options } };
-  const ctx = document.getElementById(props.id);
+  const ctx: any = document.getElementById(props.id);
   lineChart = new Chart(ctx, chartData);
 });
 
