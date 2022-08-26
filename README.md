@@ -9,4 +9,4 @@ A simple vue3 project to demonstrate vanilla Chart.js Integration
 `npm run dev`
 
 # Demo 
-demo-chartjs.lgauthier.com
+https://demo-chartjs.lgauthier.com
